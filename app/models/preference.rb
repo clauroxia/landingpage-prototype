@@ -1,7 +1,7 @@
 class PreferencesValidator < ActiveModel::Validator
   def validate(record)
     if record.women==false && record.men==false && record.children==false
-      record.errors.add :base, "You should choose at least one"
+      record.errors.add :base, "You should choose at least one preference"
     end
   end
 end

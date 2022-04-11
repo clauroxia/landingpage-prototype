@@ -13,49 +13,53 @@ class SubscribersController < ApplicationController
   # GET /subscribers/new
   def new
     @subscriber = Subscriber.new
+    @preference = Preference.new
   end
 
-  # GET /subscribers/1/edit
-  def edit
-  end
 
   # POST /subscribers or /subscribers.json
   def create
     @subscriber = Subscriber.new(subscriber_params)
+    @preference = Preference.new()
+    if params.key?("women")
+      p "######################################"
+      p "######################################"
+      pp params
+      p "######################################"
+      p "######################################"
+      @preference.women = true
+    end
+    if params.key?("men") 
+      p "######################################"
+      p "######################################"
+      pp params
+      p "######################################"
+      p "######################################"
+      @preference.men = true
+    end
+    if params.key?("children")
+      p "######################################"
+      p "######################################"
+      pp params
+      p "######################################"
+      p "######################################"
+      @preference.children = true
+    end
 
     respond_to do |format|
-      if @subscriber.save
-        format.html { redirect_to subscriber_url(@subscriber), notice: "Subscriber was successfully created." }
-        format.json { render :show, status: :created, location: @subscriber }
+      if @subscriber.save 
+        @preference.subscriber = @subscriber
+        if @preference.save
+          format.html { redirect_to subscriber_url(@subscriber), notice: "Subscriber was successfully created." }
+        else
+          format.html { render :new, status: :unprocessable_entity }
+        end
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @subscriber.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # PATCH/PUT /subscribers/1 or /subscribers/1.json
-  def update
-    respond_to do |format|
-      if @subscriber.update(subscriber_params)
-        format.html { redirect_to subscriber_url(@subscriber), notice: "Subscriber was successfully updated." }
-        format.json { render :show, status: :ok, location: @subscriber }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @subscriber.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /subscribers/1 or /subscribers/1.json
-  def destroy
-    @subscriber.destroy
-
-    respond_to do |format|
-      format.html { redirect_to subscribers_url, notice: "Subscriber was successfully destroyed." }
-      format.json { head :no_content }
-    end
-  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -65,6 +69,6 @@ class SubscribersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def subscriber_params
-      params.require(:subscriber).permit(:email)
+      params.require(:subscriber).permit(:email, :preferences)
     end
 end

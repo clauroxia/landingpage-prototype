@@ -1,10 +1,17 @@
 <%= form_with(model: subscriber) do |form| %>
   <% if subscriber.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(subscriber.errors.count, "error") %> prohibited this subscriber from being saved:</h2>
-
       <ul>
         <% subscriber.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <% if preference.errors.any? %>
+    <div style="color: red">
+      <ul>
+        <% preference.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
@@ -17,6 +24,16 @@
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.label :preferences, style: "display: block" %>
+    <%= check_box_tag(:women) %>
+    <%= label_tag(:women, "Women's Fashion") %>
+    <%= check_box_tag(:men) %>
+    <%= label_tag(:men, "Men's Fashion") %>
+    <%= check_box_tag(:children) %>
+    <%= label_tag(:children, "Children's Fashion") %>
+  </div>
+
+  <div>
+    <%= form.submit ("Subscribe Me!") %>
   </div>
 <% end %>
