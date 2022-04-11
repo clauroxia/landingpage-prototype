@@ -4,6 +4,7 @@ class CreatePreferences < ActiveRecord::Migration[7.0]
       t.boolean :women, default: false
       t.boolean :men, default: false
       t.boolean :children, default: false
+      t.references :subscriber, null: false, foreign_key: true
 
       t.timestamps
     end

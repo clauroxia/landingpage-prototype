@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_11_195101) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_11_194754) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -18,8 +18,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_11_195101) do
     t.boolean "women", default: false
     t.boolean "men", default: false
     t.boolean "children", default: false
+    t.bigint "subscriber_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["subscriber_id"], name: "index_preferences_on_subscriber_id"
   end
 
   create_table "subscribers", force: :cascade do |t|
@@ -29,15 +31,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_11_195101) do
     t.index ["email"], name: "index_subscribers_on_email", unique: true
   end
 
-  create_table "subscribers_preferences", force: :cascade do |t|
-    t.bigint "subscribers_id", null: false
-    t.bigint "preferences_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["preferences_id"], name: "index_subscribers_preferences_on_preferences_id"
-    t.index ["subscribers_id"], name: "index_subscribers_preferences_on_subscribers_id"
-  end
-
-  add_foreign_key "subscribers_preferences", "preferences", column: "preferences_id"
-  add_foreign_key "subscribers_preferences", "subscribers", column: "subscribers_id"
+  add_foreign_key "preferences", "subscribers"
 end
