@@ -30,7 +30,7 @@ class SubscribersController < ApplicationController
     end
 
     if @subscriber.save 
-      redirect_to subscriber_url(@subscriber), notice: "Subscriber was successfully created." 
+      redirect_to subscriber_url(@subscriber), status: :created, notice: "Subscriber was successfully created." 
     else
       render :new, status: :unprocessable_entity 
     end
@@ -39,11 +39,6 @@ class SubscribersController < ApplicationController
 
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_subscriber
-      @subscriber = Subscriber.find(params[:id])
-    end
-
     # Only allow a list of trusted parameters through.
     def subscriber_params
       params.require(:subscriber).permit(:email, :women, :men,:children)
