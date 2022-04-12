@@ -28,23 +28,20 @@ class SubscribersController < ApplicationController
     @preferences.each do |preference|
       @subscriber.preferences << preference if subscriber_params[preference.name] == "1"
     end
+  
+    if @subscriber.save 
+      redirect_to subscriber_url(@subscriber), status: :created, notice: "We've sent you an email to confirm your subscription." 
 
-    if @subscriber.save
-      ConfirmationMailer.subscription(@subscriber).deliver_now
-      redirect_to subscriber_url(@subscriber), notice: "We've sent you an email to confirm your subscription"
     else
       render :new, status: :unprocessable_entity
     end
   end
 
   private
-  # Use callbacks to share common setup or constraints between actions.
-  def set_subscriber
-    @subscriber = Subscriber.find(params[:id])
-  end
 
-  # Only allow a list of trusted parameters through.
-  def subscriber_params
-    params.require(:subscriber).permit(:email, :women, :men, :children)
-  end
+    # Only allow a list of trusted parameters through.
+    def subscriber_params
+      params.require(:subscriber).permit(:email, :women, :men,:children)
+    end
+
 end
