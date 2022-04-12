@@ -35,5 +35,8 @@ module CapstoneProject
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+    # add set language config to i18n
+    config.i18n.available_locales = %I[es en ru]
+    config.i18n.default_locale = :en
   end
 end

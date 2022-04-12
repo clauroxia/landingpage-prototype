@@ -30,4 +30,21 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  logo:
+    subtitle: "Almost new fashion with guarantee"
+  body:
+    welcome: "Welcome! Soon lauch our site in these country."
+    callAction: "Suscrib to receive our newletter."
+  form:
+    email: "email"
+    preference: "preference"
+    # checkbox:
+    # -"women's fashion"
+    # -"men's fashion"
+    # -"children's fashion"
+    checkbox1: "women's fashion"
+    checkbox2: "men's fashion"
+    checkbox3: "children's fashion"
+    suscribe: "Subscribe Me!"
+  error:
+    noReference: "You shoud check at least one preference"

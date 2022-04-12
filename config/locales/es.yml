@@ -1,0 +1,13 @@
+es:
+  logo:
+    subtitle: "Moda casi nueva con garantía"
+  body:
+    welcome: "Bienvenido! Pronto lanzaremos nuestro sitio en este país."
+    callAction: "Suscribete para recibir nuestras mejores ofertas."
+  form:
+    email: "correo electrónico"
+    preference: "preferencias"
+    suscribe: "Suscribirme ya!"
+    checkbox1: "Moda femenina"
+    checkbox2: "Moda masculina"
+    checkbox3: "Moda infantil"

@@ -1,1 +1,3 @@
-json.partial! "subscribers/subscriber", subscriber: @subscriber
+# frozen_string_literal: true
+
+json.partial! 'subscribers/subscriber', subscriber: @subscriber

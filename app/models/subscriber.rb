@@ -1,10 +1,10 @@
+# frozen_string_literal: true
+
 require 'httparty'
 
 class Subscriber < ApplicationRecord
-  def has_one_preference 
-    if self.preferences.empty?
-      self.errors.add(:base, "You should choose at least one preference")
-    end
+  def has_one_preference
+    errors.add(:base, 'You should choose at least one preference') if preferences.empty?
   end
 
   def quality_score
@@ -17,7 +17,7 @@ class Subscriber < ApplicationRecord
   #Association
   has_and_belongs_to_many :preferences, dependent: :destroy
 
-  #Validations
+  # Validations
   validates :email, presence: true, uniqueness: true
   validates :email,
   format: { with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]{2,3}\z/,
