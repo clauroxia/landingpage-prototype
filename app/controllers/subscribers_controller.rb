@@ -22,6 +22,9 @@ class SubscribersController < ApplicationController
 
   # POST /subscribers or /subscribers.json
   def create
+    p "***************************************"
+    pp params
+    p "***************************************"
     @preferences = Preference.all
     @subscriber = Subscriber.new(email: subscriber_params['email'])
 

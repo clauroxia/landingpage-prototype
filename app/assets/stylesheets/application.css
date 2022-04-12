@@ -40,9 +40,55 @@
   padding-top: 1rem;
 }
 
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form--input-email {
+  border: 1px solid gray;
+  border-radius: 4px;
+}
+
+.form--input-email:focus {
+  border: 3px solid green;
+  box-shadow: 0px 1px 1px 1px green;
+  outline: none;
+}
+
+.container--checkboxes,
+.container--email,
+.subcontainer--chexboxes {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+}
+
+.subcontainer--chexboxes {
+  flex-direction: row;
+}
+
+.form--checkbox:checked {
+  background-color: red;
+}
+
 .header {
   display: flex;
   flex-direction: column;
   place-items: center;
   margin-bottom: 1rem;
+}
+
+.nav--language {
+  display: flex;
+  gap: 0.2rem;
+}
+
+.form--button-submit {
+  background: none;
+  background-color: green;
+  border: none;
+  color: white;
 }

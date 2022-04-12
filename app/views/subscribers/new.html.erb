@@ -2,13 +2,24 @@
 <div class="section--container">
   <header class="header">
     <%= image_tag("logo.svg", :alt => "logo", style: "width: 70%") %>
-    <p class="logo--subtitle">Almost new fashion with guarantee</p>
+    <p class="logo--subtitle"> <%= t"logo.subtitle" %></p>
   </header>
+
+  <nav>
+
+<%#  I18n.locale  %>
+
+  <ul class="nav--language" role="nav">
+    <li><%= link_to 'English', root_path(locale: :en) %></li>
+    <li><%= link_to 'Русский', root_path(locale: :ru) %></li>
+    <li><%= link_to 'Espanish', root_path(locale: :es) %></li>
+  </ul>
+</nav>
 
   <div class="body">
   <div class="call-action">
-    <p >Welcome! Soon we will launch our site in this country.</p>
-    <p >Suscribe to recerve our newsletter.</p>
+    <p ><%= t"body.welcome" %></p>
+    <p ><%= t"body.callAction" %></p>
   </div>
    <%= render "form", subscriber: @subscriber, preferences:@preferences %>
   </div>
@@ -18,7 +29,7 @@
 <br>
 
 <div>
-  <%= link_to "Back to subscribers", subscribers_path %>
+  <%= link_to "Volver a suscriptores", subscribers_path %>
 </div>
 </section>
 </div>

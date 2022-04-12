@@ -20,12 +20,16 @@ dd {
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role="list"],
+ul[role="nav"],
 ol[role="list"] {
   list-style: none;
 }
 ul {
+  text-decoration: none;
   list-style: none;
+}
+li {
+  text-decoration: none;
 }
 /* Set core root defaults */
 html:focus-within {

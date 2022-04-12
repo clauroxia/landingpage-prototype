@@ -1,4 +1,4 @@
-<%= form_with(model: subscriber) do |form| %>
+<%= form_with(model: subscriber, html:{class: "form"}) do |form| %>
   <% if subscriber.errors.any? %>
     <div style="color: red">
       <ul>
@@ -10,20 +10,23 @@
   <% end %>
 
 
-  <div>
-    <%= form.label :email, style: "display: block" %>
-    <%= form.text_field :email %>
+  <div class="container--email">
+    <%= form.label t"form.email", style: "display: block", class: "form--label-email" %>
+    <%= form.text_field :email, class: "form--input-email" %>
   </div>
 
-  <div>
-    <%= form.label :preference, style: "display: block" %>
-      <% preferences.each do |preference| %>
-        <%= form.check_box(preference.name, {value: "0", checked: "false"}) %>
-        <%= form.label(preference.name, "#{preference.name}'s fashion") %>   
+  <div class="container--checkboxes">
+    <%= form.label (t"form.preference").to_sym, style: "display: block", class: "form--group-preference" %>
+      <% preferences.each_with_index do |preference, index| %>
+        <div class="subcontainer--checkboxes">
+          <%= form.check_box(preference.name, {value: "0", checked: "false", class: "form--checkbox"}) %>
+          <%= form.label(preference.name, "#{preference.name}'s fashion", class: "form--label") %>
+         
+        </div>
       <% end %>
   </div>
 
   <div>
-    <%= form.submit ("Subscribe Me!") %>
+    <%= form.submit t"form.suscribe", :class => 'submit_class_name_here' %>
   </div>
 <% end %>
