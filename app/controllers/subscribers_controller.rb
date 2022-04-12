@@ -14,6 +14,7 @@ class SubscribersController < ApplicationController
 
   # GET /subscribers/new
   def new
+    @preferences = Preference.all
     @subscriber = Subscriber.new
     @preference = Preference.new
   end
@@ -21,39 +22,17 @@ class SubscribersController < ApplicationController
 
   # POST /subscribers or /subscribers.json
   def create
-    @subscriber = Subscriber.new(subscriber_params)
-    @preference = Preference.new()
-    if params.key?("women")
-      @preference.women = true
-    end
-    if params.key?("men") 
-      @preference.men = true
-    end
-    if params.key?("children")
-      @preference.children = true
+    @preferences = Preference.all
+    @subscriber = Subscriber.new(email: subscriber_params["email"])
+  
+    @preferences.each do |preference|
+      @subscriber.preferences << preference if subscriber_params[preference.name] == "1"
     end
 
-    response= HTTParty.get("https://emailvalidation.abstractapi.com/v1/?api_key=#{ENV["ABSTRACT_API_KEY"]}&email=#{subscriber_params[:email]}")
-
-    p "######################################################################"
-    p "######################################################################"
-    pp response
-
-    p "######################################################################"
-    p "######################################################################"
-    pp "#{ENV["BASE_URI_KEY"]}"
-    p "######################################################################"
-    p "######################################################################"
-    
-    if @subscriber.validate && (params.key?("men") || params.key?("women") || params.key?("children"))
-      @subscriber.save
-      @preference.subscriber = @subscriber
-      @preference.save
+    # response= HTTParty.get("https://emailvalidation.abstractapi.com/v1/?api_key=#{ENV["ABSTRACT_API_KEY"]}&email=#{subscriber_params[:email]}")
+    if @subscriber.save 
       redirect_to subscriber_url(@subscriber), notice: "Subscriber was successfully created." 
     else
-      if ((params.key?("men") || params.key?("women") || params.key?("children")))
-        @preference.errors.add(:base, "You should choose at least one preference")
-      end
       render :new, status: :unprocessable_entity 
     end
 
@@ -68,6 +47,6 @@ class SubscribersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def subscriber_params
-      params.require(:subscriber).permit(:email)
+      params.require(:subscriber).permit(:email, :women, :men,:children)
     end
 end

@@ -8,15 +8,7 @@
       </ul>
     </div>
   <% end %>
-  <% if preference.errors.any? %>
-    <div style="color: red">
-      <ul>
-        <% preference.errors.messages[:base].each do |error| %>
-          <li><%= error %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+
 
   <div>
     <%= form.label :email, style: "display: block" %>
@@ -24,13 +16,11 @@
   </div>
 
   <div>
-    <%= form.label :preferences, style: "display: block" %>
-    <%= check_box_tag(:women) %>
-    <%= label_tag(:women, "Women's Fashion") %>
-    <%= check_box_tag(:men) %>
-    <%= label_tag(:men, "Men's Fashion") %>
-    <%= check_box_tag(:children) %>
-    <%= label_tag(:children, "Children's Fashion") %>
+    <%= form.label :preference, style: "display: block" %>
+      <% preferences.each do |preference| %>
+        <%= form.check_box(preference.name) %>
+        <%= form.label(preference.name, "#{preference.name}'s fashion") %>   
+      <% end %>
   </div>
 
   <div>

@@ -1,12 +1,3 @@
-# class PreferencesValidator < ActiveModel::Validator
-#   def validate(record)
-#     if record.women==false && record.men==false && record.children==false
-#       record.errors.add :base, "You should choose at least one preference"
-#     end
-#   end
-# end
-
-
 class Subscriber < ApplicationRecord
 def has_one_preference 
   if self.preferences.empty?
@@ -23,6 +14,6 @@ validates :email,
 format: { with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]{2,3}\z/,
           message: "must have an email format" }
           # format: {with: URI::MailTo::EMAIL_REGEXP}
-validate :has_one_preference, 
+validate :has_one_preference
 
 end
