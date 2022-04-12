@@ -1,3 +1,5 @@
+require 'httparty'
+
 class SubscribersController < ApplicationController
   before_action :set_subscriber, only: %i[ show edit update destroy ]
 
@@ -31,13 +33,27 @@ class SubscribersController < ApplicationController
       @preference.children = true
     end
 
+    response= HTTParty.get("https://emailvalidation.abstractapi.com/v1/?api_key=#{ENV["ABSTRACT_API_KEY"]}&email=#{subscriber_params[:email]}")
+
+    p "######################################################################"
+    p "######################################################################"
+    pp response
+
+    p "######################################################################"
+    p "######################################################################"
+    pp "#{ENV["BASE_URI_KEY"]}"
+    p "######################################################################"
+    p "######################################################################"
+    
     if @subscriber.validate && (params.key?("men") || params.key?("women") || params.key?("children"))
       @subscriber.save
       @preference.subscriber = @subscriber
       @preference.save
       redirect_to subscriber_url(@subscriber), notice: "Subscriber was successfully created." 
     else
-      @preference.errors.add(:base, "You should choose at least one preference")
+      if ((params.key?("men") || params.key?("women") || params.key?("children")))
+        @preference.errors.add(:base, "You should choose at least one preference")
+      end
       render :new, status: :unprocessable_entity 
     end
 
