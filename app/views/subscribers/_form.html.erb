@@ -20,8 +20,7 @@
       <% preferences.each_with_index do |preference, index| %>
         <div class="subcontainer--checkboxes">
           <%= form.check_box(preference.name, {value: "0", checked: "false", class: "form--checkbox"}) %>
-          <%= form.label(preference.name, "#{preference.name}'s fashion", class: "form--label") %>
-         
+          <%= form.label(preference.name, t("form.checkbox#{index +1}"), class: "form--label") %>
         </div>
       <% end %>
   </div>

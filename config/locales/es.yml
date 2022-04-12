@@ -8,7 +8,6 @@ es:
     email: "correo electrónico"
     preference: "preferencias"
     suscribe: "Suscribirme ya!"
-    # checkbox:
-    # -"Moda femenina"
-    # -"Moda masculina"
-    # -"Moda infantil"
+    checkbox1: "Moda femenina"
+    checkbox2: "Moda masculina"
+    checkbox3: "Moda infantil"

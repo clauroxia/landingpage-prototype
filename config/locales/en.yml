@@ -42,9 +42,9 @@ en:
     # -"women's fashion"
     # -"men's fashion"
     # -"children's fashion"
-    # checkbox1: "women's fashion"
-    # checkbox2: "men's fashion"
-    # checkbox3: "children's fashion"
+    checkbox1: "women's fashion"
+    checkbox2: "men's fashion"
+    checkbox3: "children's fashion"
     suscribe: "Subscribe Me!"
   error:
     noReference: "You shoud check at least one preference"

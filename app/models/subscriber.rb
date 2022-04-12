@@ -10,7 +10,7 @@ class Subscriber < ApplicationRecord
   def quality_score
     base_uri = 'https://emailvalidation.abstractapi.com/v1/'
     response = HTTParty.get("#{base_uri}?api_key=#{ENV['ABSTRACT_API_KEY']}&email=#{self[:email]}")
-    errors.add(:base, 'You should try enter an valid email') if response['quality_score'].to_f <= 0.0
+    errors.add(:base, 'You should try enter an valid email') if response['quality_score'].to_f < 0.7
   end
   # Association
   has_and_belongs_to_many :preferences, dependent: :destroy
@@ -22,5 +22,5 @@ class Subscriber < ApplicationRecord
                       message: 'must have an email format' }
   # format: {with: URI::MailTo::EMAIL_REGEXP}
   validate :has_one_preference
-  # validate :quality_score
+  validate :quality_score
 end
