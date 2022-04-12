@@ -10,7 +10,7 @@ class Subscriber < ApplicationRecord
   def quality_score
     base_uri = "https://emailvalidation.abstractapi.com/v1/"
     response= HTTParty.get("#{base_uri}?api_key=#{ENV["ABSTRACT_API_KEY"]}&email=#{self[:email]}")
-    if response["quality_score"].to_i <= 0.7
+    if response["quality_score"].to_f < 0.7
       self.errors.add(:base, "You should try enter an valid email")
     end
   end 
