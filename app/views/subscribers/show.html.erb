@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @subscriber %>
+
+<div>
+  <%= link_to "Edit this subscriber", edit_subscriber_path(@subscriber) %> |
+  <%= link_to "Back to subscribers", subscribers_path %>
+
+  <%= button_to "Destroy this subscriber", @subscriber, method: :delete %>
+</div>
