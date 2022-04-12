@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'Subscribers', :type => :request do
   
   before :all do
-    @preferences = Preference.create([{name: "women"}, {name: "men"}, {name: "children"}])
+    Preference.create([{name: "women"}, {name: "men"}, {name: "children"}])
   end
   
   describe 'new path' do
@@ -39,6 +39,10 @@ describe 'Subscribers', :type => :request do
         post '/subscribers', params: { subscriber: {email: "linaresaustin@hotmail.com", women:"0", men:"1", children:"0"} }
         expect(response).to have_http_status(:unprocessable_entity)
       end
+    end
+
+    describe 'respond with http success status code' do
+
     end
   end
 end
