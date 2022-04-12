@@ -68,6 +68,6 @@ class SubscribersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def subscriber_params
-      params.require(:subscriber).permit(:email, :preferences)
+      params.require(:subscriber).permit(:email)
     end
 end

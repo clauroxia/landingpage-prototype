@@ -10,18 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_11_194754) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_12_020957) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "preferences", force: :cascade do |t|
-    t.boolean "women", default: false
-    t.boolean "men", default: false
-    t.boolean "children", default: false
-    t.bigint "subscriber_id", null: false
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["subscriber_id"], name: "index_preferences_on_subscriber_id"
+  end
+
+  create_table "preferences_subscribers", id: false, force: :cascade do |t|
+    t.bigint "preference_id", null: false
+    t.bigint "subscriber_id", null: false
   end
 
   create_table "subscribers", force: :cascade do |t|
@@ -31,5 +32,4 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_11_194754) do
     t.index ["email"], name: "index_subscribers_on_email", unique: true
   end
 
-  add_foreign_key "preferences", "subscribers"
 end
