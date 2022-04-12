@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,26 +12,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_12_020957) do
+ActiveRecord::Schema[7.0].define(version: 20_220_412_020_957) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "preferences", force: :cascade do |t|
-    t.string "name", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'preferences', force: :cascade do |t|
+    t.string 'name', null: false
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  create_table "preferences_subscribers", id: false, force: :cascade do |t|
-    t.bigint "preference_id", null: false
-    t.bigint "subscriber_id", null: false
+  create_table 'preferences_subscribers', id: false, force: :cascade do |t|
+    t.bigint 'preference_id', null: false
+    t.bigint 'subscriber_id', null: false
   end
 
-  create_table "subscribers", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_subscribers_on_email", unique: true
+  create_table 'subscribers', force: :cascade do |t|
+    t.string 'email', default: '', null: false
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['email'], name: 'index_subscribers_on_email', unique: true
   end
-
 end

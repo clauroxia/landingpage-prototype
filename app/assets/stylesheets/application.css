@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+@import url("./reset.css");
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -13,3 +15,34 @@
  *= require_tree .
  *= require_self
  */
+
+.logo--subtitle {
+  font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 0.75rem;
+  color: #ced0d3;
+}
+
+.call-action {
+  font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  color: black;
+  font-weight: 400;
+  margin: 2rem 0;
+}
+.section {
+  max-width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section--container {
+  padding-top: 1rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  margin-bottom: 1rem;
+}
