@@ -21,15 +21,14 @@ class SubscribersController < ApplicationController
   # POST /subscribers or /subscribers.json
   def create
     @preferences = Preference.all
-    @subscriber = Subscriber.new(email: subscriber_params['email'])
+    @subscriber = Subscriber.new(email: subscriber_params["email"])
 
     @preferences.each do |preference|
       @subscriber.preferences << preference if subscriber_params[preference.name].eql?('1')
     end
 
-    # response= HTTParty.get("https://emailvalidation.abstractapi.com/v1/?api_key=#{ENV["ABSTRACT_API_KEY"]}&email=#{subscriber_params[:email]}")
-    if @subscriber.save
-      redirect_to subscriber_url(@subscriber), notice: 'Subscriber was successfully created.'
+    if @subscriber.save 
+      redirect_to subscriber_url(@subscriber), notice: "Subscriber was successfully created." 
     else
       render :new, status: :unprocessable_entity
     end
