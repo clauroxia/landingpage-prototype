@@ -24,12 +24,11 @@ class SubscribersController < ApplicationController
   def create
     @preferences = Preference.all
     @subscriber = Subscriber.new(email: subscriber_params["email"])
-  
+
     @preferences.each do |preference|
       @subscriber.preferences << preference if subscriber_params[preference.name] == "1"
     end
 
-    # response= HTTParty.get("https://emailvalidation.abstractapi.com/v1/?api_key=#{ENV["ABSTRACT_API_KEY"]}&email=#{subscriber_params[:email]}")
     if @subscriber.save 
       redirect_to subscriber_url(@subscriber), notice: "Subscriber was successfully created." 
     else
