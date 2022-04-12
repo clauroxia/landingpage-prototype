@@ -28,19 +28,20 @@ class SubscribersController < ApplicationController
     @preferences.each do |preference|
       @subscriber.preferences << preference if subscriber_params[preference.name] == "1"
     end
-
+  
     if @subscriber.save 
-      redirect_to subscriber_url(@subscriber), status: :created, notice: "Subscriber was successfully created." 
-    else
-      render :new, status: :unprocessable_entity 
-    end
+      redirect_to subscriber_url(@subscriber), status: :created, notice: "We've sent you an email to confirm your subscription." 
 
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
-
   private
+
     # Only allow a list of trusted parameters through.
     def subscriber_params
       params.require(:subscriber).permit(:email, :women, :men,:children)
     end
+
 end
