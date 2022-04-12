@@ -11,8 +11,8 @@
   <% if preference.errors.any? %>
     <div style="color: red">
       <ul>
-        <% preference.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+        <% preference.errors.messages[:base].each do |error| %>
+          <li><%= error %></li>
         <% end %>
       </ul>
     </div>

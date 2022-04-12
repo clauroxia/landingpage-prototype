@@ -22,42 +22,25 @@ class SubscribersController < ApplicationController
     @subscriber = Subscriber.new(subscriber_params)
     @preference = Preference.new()
     if params.key?("women")
-      p "######################################"
-      p "######################################"
-      pp params
-      p "######################################"
-      p "######################################"
       @preference.women = true
     end
     if params.key?("men") 
-      p "######################################"
-      p "######################################"
-      pp params
-      p "######################################"
-      p "######################################"
       @preference.men = true
     end
     if params.key?("children")
-      p "######################################"
-      p "######################################"
-      pp params
-      p "######################################"
-      p "######################################"
       @preference.children = true
     end
 
-    respond_to do |format|
-      if @subscriber.save 
-        @preference.subscriber = @subscriber
-        if @preference.save
-          format.html { redirect_to subscriber_url(@subscriber), notice: "Subscriber was successfully created." }
-        else
-          format.html { render :new, status: :unprocessable_entity }
-        end
-      else
-        format.html { render :new, status: :unprocessable_entity }
-      end
+    if @subscriber.validate && (params.key?("men") || params.key?("women") || params.key?("children"))
+      @subscriber.save
+      @preference.subscriber = @subscriber
+      @preference.save
+      redirect_to subscriber_url(@subscriber), notice: "Subscriber was successfully created." 
+    else
+      @preference.errors.add(:base, "You should choose at least one preference")
+      render :new, status: :unprocessable_entity 
     end
+
   end
 
 
