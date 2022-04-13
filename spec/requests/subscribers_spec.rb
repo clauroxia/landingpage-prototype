@@ -46,10 +46,24 @@ describe 'Subscribers', :type => :request do
       end
     end
 
-    describe 'respond with http success status code' do
-      it 'when a correct request is send' do
+    describe 'when a correct request is send' do
+      it 'respond with http created status code' do
         post '/subscribers', params: { subscriber: {email: "austin@mail.com", women:"0", men:"1", children:"0"} }
         expect(response).to have_http_status(:created)
+      end
+      
+      it 'respond with the corrrect email' do
+        data = {email: "austin@mail.com", women:"0", men:"1", children:"0"}
+        post '/subscribers', params: { subscriber: data }
+        expect(Subscriber.last[:email]).to eq(data[:email])
+      end
+
+      it 'respond with the correct preference' do
+        data = {email: "austin2@mail.com", women:"1", men:"0", children:"0"}
+        choosen_pref = ["women", "children"]
+        post '/subscribers', params: { subscriber: data}
+        last_sub = Subscriber.last
+        expect(last_sub.preferences[0][:name]).to eq("women")
       end
     end
   end
