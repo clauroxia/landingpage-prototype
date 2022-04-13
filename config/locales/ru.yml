@@ -1,4 +1,7 @@
 ru:
+  models:
+    preferences: предпочтения
+    subscribers: абоненты
   logo:
     subtitle: "почти новая мода с гарантией"
   body:
@@ -9,10 +12,13 @@ ru:
     preference: "предпочтение"
     suscribe: "подписаться!"
     checkbox: "тренд для"
-  errors:
-    noPreferences: "вы должны выбрать хотя бы одно предпочтение"
-    noValidEmail: "Введенный вами email недействителен, попробуйте еще раз!"
-    invalidFormatEmail: "должен иметь формат электронной почты"
+  messages:
+    errors:
+      preferences_not_selected: "вы должны выбрать хотя бы одно предпочтение"
+      score_not_valid: "Введенный вами email недействителен, попробуйте еще раз!"
+      format_not_valid: "должен иметь формат электронной почты"
+    success:
+      created: "Мы отправили вам электронное письмо для подтверждения подписки."
   preference:
     men: мужчины
     women: женщины
@@ -22,4 +28,5 @@ ru:
     spanish: "испанский"
     english: "Английский"
   link:
-    show_subscribers: "видеть подписчиков"
+    index_subscribers: "видеть подписчиков"
+    new_subscriber: "Новый абонент"

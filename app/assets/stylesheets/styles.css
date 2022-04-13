@@ -133,3 +133,11 @@
   width: fit-content;
   padding: 5px;
 }
+.input__error-message {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: white;
+  background-color: red;
+  border-radius: 4px;
+  padding: 5px;
+}

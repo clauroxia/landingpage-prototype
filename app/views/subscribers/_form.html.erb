@@ -1,18 +1,8 @@
 <%= form_with(model: subscriber, html:{class: "form"}) do |form| %>
-  <% if subscriber.errors.any? %>
-    <div style="color: red">
-      <ul>
-        <% subscriber.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-
   <div class="container--email">
     <%= form.label t"form.email", style: "display: block", class: "form--label-email" %>
     <%= form.text_field :email, class: "form--input-email" %>
+    <%=errors_for(subscriber, :email)%>
   </div>
 
   <div class="container--checkboxes">
@@ -24,6 +14,7 @@
           <%= form.label(preference.name, params[:locale].eql?("en") ? t("preference.#{preference.name}") + t("form.checkbox") : t("form.checkbox") + t("preference.#{preference.name}"), class: "form--label") %>
         </div>
       <% end %>
+      <%=errors_for(subscriber, :preferences)%>
   </div>
 
   <%= form.submit( t("form.suscribe"), :class => 'form--button-submit' )%>
