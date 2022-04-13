@@ -24,7 +24,7 @@ class SubscribersController < ApplicationController
     @preferences.each do |preference|
       @subscriber.preferences << preference if subscriber_params[preference.name].eql?('1')
     end
- 
+
     if @subscriber.save 
       ConfirmationMailer.subscription(@subscriber).deliver_now
       redirect_to subscribers_path, status: :created, notice: "We've sent you an email to confirm your subscription." 
@@ -41,7 +41,7 @@ class SubscribersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def subscriber_params
-      params.require(:subscriber).permit(:email, :women, :men,:children)
+      params.require(:subscriber).permit(:email, :women, :men, :children)
     end
 
 end

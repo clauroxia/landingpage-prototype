@@ -1,14 +1,12 @@
-<p style="color: green"><%= notice %></p>
-<h1>Subscribers</h1>
+<section class="container-main">
+  <p style="color: green"><%= notice %></p>
+  <h1>Subscribers</h1>
 
-<div id="subscribers">
+  <div id="subscribers" class="container-subscribers">
   <% @subscribers.each do |subscriber| %>
     <%= render subscriber %>
-    <p>Preferences</p>
-    <% subscriber.preferences.each do |preference| %>
-      <%= preference.name %>
-    <% end %>
   <% end %>
-</div>
+  </div>
 
-<%= link_to "New subscriber", new_subscriber_path %>
+  <%= link_to "New subscriber", new_subscriber_path %>
+</section>

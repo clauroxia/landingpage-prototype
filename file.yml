@@ -1,6 +1,6 @@
 ru:
   logo:
-    subtitle: "почти новая мода с гарантией"
+    subtitle: "почти новая мода с гарантиейcmmio"
   body:
     welcome: "Добро пожаловать на наш сайт! Скоро мы запустим наш сайт в этой стране."
     callAction: "Подпишитесь, чтобы получать нашу рассылку."
@@ -13,13 +13,7 @@ ru:
     noPreferences: "вы должны выбрать хотя бы одно предпочтение"
     noValidEmail: "Введенный вами email недействителен, попробуйте еще раз!"
     invalidFormatEmail: "должен иметь формат электронной почты"
-  preference:
+  preferences:
     men: мужчины
     women: женщины
     children: дети
-  language:
-    russian: "Русский"
-    spanish: "испанский"
-    english: "Английский"
-  link:
-    show_subscribers: "видеть подписчиков"

@@ -8,6 +8,18 @@ es:
     email: "correo electrónico"
     preference: "preferencias"
     suscribe: "Suscribirme ya!"
-    checkbox1: "Moda femenina"
-    checkbox2: "Moda masculina"
-    checkbox3: "Moda infantil"
+    checkbox: "Tendencias para "
+  errors:
+    noPreferences: "Es necesario escoger al menos una preferencia."
+    noValidEmail: "El email que ingresaste no es válido, intenta otra vez!"
+    invalidFormatEmail: "Formato de email inválido, intenta otra vez!"
+  preference:
+    men: hombres
+    women: mujeres
+    children: niños
+  language:
+    russian: "ruso"
+    spanish: "español"
+    english: "inglés"
+  link:
+    show_subscribers: "Ver Suscriptores"

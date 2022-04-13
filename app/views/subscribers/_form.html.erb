@@ -20,12 +20,11 @@
       <% preferences.each_with_index do |preference, index| %>
         <div class="subcontainer--checkboxes">
           <%= form.check_box(preference.name, {value: "0", checked: "false", class: "form--checkbox"}) %>
-          <%= form.label(preference.name, t("form.checkbox#{index +1}"), class: "form--label") %>
+          <%# form.label(preference.name, t("form.checkbox#{index +1}"), class: "form--label") %>
+          <%= form.label(preference.name, params[:locale].eql?("en") ? t("preference.#{preference.name}") + t("form.checkbox") : t("form.checkbox") + t("preference.#{preference.name}"), class: "form--label") %>
         </div>
       <% end %>
   </div>
 
-  <div>
-    <%= form.submit t"form.suscribe", :class => 'submit_class_name_here' %>
-  </div>
+  <%= form.submit( t("form.suscribe"), :class => 'form--button-submit' )%>
 <% end %>

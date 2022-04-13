@@ -1,33 +1,49 @@
+
 <section class="section">
+
 <div class="section--container">
   <header class="header">
-    <%= image_tag("logo.svg", :alt => "logo", style: "width: 70%") %>
-    <p class="logo--subtitle"> <%= t"logo.subtitle" %></p>
+    <nav class="navbar">
+      <%= link_to  root_path(locale: :en), class:"language" do %>
+        <div class="language--container">
+          <%= image_tag "en.png" %>
+          <p><%= t"language.english" %></p>
+        </div>
+      <% end%>
+      <%= link_to  root_path(locale: :ru), class:"language" do %>
+        <div class="language--container">
+          <%= image_tag "ru.png" %>
+          <p><%= t"language.russian" %></p>
+        </div>
+      <% end%>
+      <%= link_to  root_path(locale: :es), class:"language" do %>
+        <div class="language--container">
+          <%= image_tag "es.png" %>
+          <p><%= t"language.spanish" %></p>
+        </div>
+      <% end%>
+      
+    </nav>
   </header>
 
-  <nav>
-
-  <ul class="nav--language" role="nav">
-    <li><%= link_to 'English', root_path(locale: :en) %></li>
-    <li><%= link_to 'Русский', root_path(locale: :ru) %></li>
-    <li><%= link_to 'Espanish', root_path(locale: :es) %></li>
-  </ul>
-</nav>
+  <div class="container-logo">
+    <%= image_tag("logo.svg", :alt => "logo", class: "logo") %>
+    <p class="logo--subtitle"> <%= t"logo.subtitle" %></p>
+  </div>
 
   <div class="body">
-  <div class="call-action">
-    <p ><%= t"body.welcome" %></p>
-    <p ><%= t"body.callAction" %></p>
+    <div class="call-action">
+      <p ><%= t"body.welcome" %></p>
+      <p ><%= t"body.callAction" %></p>
+    </div>
   </div>
-   <%= render "form", subscriber: @subscriber, preferences:@preferences %>
+  <div class="container-form">
+    <%= render "form", subscriber: @subscriber, preferences:@preferences %>
   </div>
 
-
-
-<br>
-
-<div>
-  <%= link_to "Ver suscriptores", subscribers_path %>
+  <div>
+    <%= link_to t("link.show_subscribers"), subscribers_path %>
+  </div>
 </div>
+
 </section>
-</div>

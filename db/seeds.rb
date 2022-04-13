@@ -1,3 +1,4 @@
+require 'i18n'
 # frozen_string_literal: true
 
 # Dropping Tables

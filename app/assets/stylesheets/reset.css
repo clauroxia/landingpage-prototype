@@ -27,6 +27,11 @@ ol[role="list"] {
 ul {
   text-decoration: none;
   list-style: none;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  color: #66b984;
 }
 li {
   text-decoration: none;
