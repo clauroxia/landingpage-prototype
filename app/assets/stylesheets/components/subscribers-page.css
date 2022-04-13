@@ -1,0 +1,16 @@
+.container-main {
+  padding: 10px;
+}
+.container-subscribers {
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.card-email {
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  border: solid 2px #66b984;
+  width: fit-content;
+  padding: 5px;
+}

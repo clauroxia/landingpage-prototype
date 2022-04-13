@@ -1,0 +1,8 @@
+.input__error-message {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: red;
+  font-weight: bold;
+  border-radius: 4px;
+  padding: 5px;
+}

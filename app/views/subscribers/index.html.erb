@@ -1,6 +1,6 @@
 <section class="container-main">
   <p style="color: green"><%= notice %></p>
-  <h1>Subscribers</h1>
+  <h1><%= t"models.subscribers" %></h1>
 
   <div id="subscribers" class="container-subscribers">
   <% @subscribers.each do |subscriber| %>
@@ -8,5 +8,5 @@
   <% end %>
   </div>
 
-  <%= link_to "New subscriber", new_subscriber_path %>
+  <%= link_to I18n.t("link.new_subscriber"), new_subscriber_path %>
 </section>

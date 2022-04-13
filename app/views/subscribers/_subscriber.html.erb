@@ -1,13 +1,13 @@
 <div id="<%= dom_id subscriber %>">
-<div class="card-email">
-  <p>
-    <strong>Email:</strong>
-    <%= subscriber.email %>
-  </p>
- <p><strong>Preferences :</strong>
-    <% subscriber.preferences.each do |preference| %>
-      <%= preference.name %> |
-    <% end %>
-  </p>
-</div>
+  <div class="card-email">
+    <p>
+      <strong><%= t"form.email" %>:</strong>
+      <%= subscriber.email %>
+    </p>
+  <p><strong><%= t"form.preference" %> :</strong>
+      <% subscriber.preferences.each do |preference| %>
+        <%= t"preference.#{preference.name}" %> |
+      <% end %>
+    </p>
+  </div>
 </div>

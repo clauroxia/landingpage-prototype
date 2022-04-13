@@ -28,7 +28,7 @@ class SubscribersController < ApplicationController
     if @subscriber.save
       ConfirmationMailer.subscription(@subscriber).deliver_now
       redirect_to subscribers_path, status: :created,
-                                    notice: "We've sent you an email to confirm your subscription."
+                                    notice: I18n.t("messages.success.created")
     else
       render :new, status: :unprocessable_entity
     end
