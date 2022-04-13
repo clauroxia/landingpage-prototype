@@ -1,4 +1,7 @@
 es:
+  models:
+    preferences: preferences
+    subscribers: subscribers
   logo:
     subtitle: "Moda casi nueva con garantía"
   body:
@@ -9,10 +12,13 @@ es:
     preference: "preferencias"
     suscribe: "Suscribirme ya!"
     checkbox: "Tendencias para "
-  errors:
-    noPreferences: "Es necesario escoger al menos una preferencia."
-    noValidEmail: "El email que ingresaste no es válido, intenta otra vez!"
-    invalidFormatEmail: "Formato de email inválido, intenta otra vez!"
+  messagges:
+    errors:
+      preferences_not_selected: "Escoge al menos una preferencia, por favor."
+      score_not_valid: "El email que ingresaste no es válido, intenta otra vez!"
+      format_not_valid: "Formato de email inválido, intenta otra vez!"
+    success:
+      created: "Te hemos enviado un correo electrónico para verificar tu subscripción."
   preference:
     men: hombres
     women: mujeres
@@ -22,4 +28,5 @@ es:
     spanish: "español"
     english: "inglés"
   link:
-    show_subscribers: "Ver Suscriptores"
+    index_subscribers: "Ver Suscriptores"
+    new_subscriber: "Crear un nuevo suscriptor"

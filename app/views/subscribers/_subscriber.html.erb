@@ -2,15 +2,10 @@
 
   <tr>
     <td><%= subscriber.email %></td>
-    <% subscriber.preferences.find do |preference| %>
-      <td><%= preference[:name] == "women" ? "ok" : "" %></td>
-    <% end   %>
-   <% subscriber.preferences.find do |preference| %>
-      <td><%= preference[:name] == "men" ? "ok" : "" %></td>
-    <% end   %>
-    <% subscriber.preferences.find do |preference| %>
-      <td><%= preference[:name] == "children" ? "ok" : "" %></td>
-    <% end   %>
+    <% my_preference = subscriber.preferences.map{|preference| preference.name}%>
+    <td><%= my_preference.include?("women") ? "✔" : "" %></td>
+    <td><%= my_preference.include?("children") ? "✔" : "" %></td>
+    <td><%= my_preference.include?("men") ? "✔" : "" %></td>
   </tr>
 
 </div>

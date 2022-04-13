@@ -1,35 +1,7 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t "hello"
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t("hello") %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   "true": "foo"
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
+  models:
+    preferences: preferences
+    subscribers: subscribers
   logo:
     subtitle: "Almost new fashion with guarantee"
   body:
@@ -40,17 +12,21 @@ en:
     preference: "preferences"
     checkbox: "'s fashion"
     suscribe: "Subscribe Me!"
-  errors:
-    noPreferences: "You shoud check at least one preference"
-    noValidEmail: "You should try enter an valid email"
-    invalidFormatEmail: "must have an email format"
+  messagges:
+    errors:
+      preferences_not_selected: "You should check at least one preference"
+      score_not_valid: "You should try to enter an valid email"
+      format_not_valid: "must have an email format"
+    success:
+      created: "We've sent you an email to confirm your subscription."
   preference:
-    men: man
-    women: woman
+    men: men
+    women: women
     children: children
   language:
     russian: "russian"
     spanish: "spanish"
     english: "english"
   link:
-    show_subscribers: "Go to Subscribers"
+    index_subscribers: "Go to Subscribers"
+    new_subscriber: "Create a new subscriber"
