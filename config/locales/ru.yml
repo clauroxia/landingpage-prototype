@@ -12,7 +12,7 @@ ru:
     preference: "предпочтение"
     suscribe: "подписаться!"
     checkbox: "тренд для"
-  messagges:
+  messages:
     errors:
       preferences_not_selected: "вы должны выбрать хотя бы одно предпочтение"
       score_not_valid: "Введенный вами email недействителен, попробуйте еще раз!"

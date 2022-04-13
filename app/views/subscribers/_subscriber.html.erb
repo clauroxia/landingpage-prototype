@@ -4,8 +4,8 @@
     <td><%= subscriber.email %></td>
     <% my_preference = subscriber.preferences.map{|preference| preference.name}%>
     <td><%= my_preference.include?("women") ? "✔" : "" %></td>
-    <td><%= my_preference.include?("children") ? "✔" : "" %></td>
     <td><%= my_preference.include?("men") ? "✔" : "" %></td>
+    <td><%= my_preference.include?("children") ? "✔" : "" %></td>
   </tr>
 
 </div>

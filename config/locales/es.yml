@@ -5,14 +5,14 @@ es:
   logo:
     subtitle: "Moda casi nueva con garantía"
   body:
-    welcome: "Bienvenido! Pronto lanzaremos nuestro sitio en este país."
-    callAction: "Suscribete para recibir nuestras mejores ofertas."
+    welcome: "¡Bienvenido! Pronto lanzaremos nuestro sitio en este país."
+    callAction: "Suscríbete para recibir nuestras mejores ofertas."
   form:
     email: "correo electrónico"
     preference: "preferencias"
-    suscribe: "Suscribirme ya!"
+    suscribe: "¡Suscribirme ya!"
     checkbox: "Tendencias para "
-  messagges:
+  messages:
     errors:
       preferences_not_selected: "Escoge al menos una preferencia, por favor."
       score_not_valid: "El email que ingresaste no es válido, intenta otra vez!"
