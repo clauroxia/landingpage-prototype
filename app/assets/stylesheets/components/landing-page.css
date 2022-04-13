@@ -98,3 +98,33 @@
 .form--button-submit:active {
   transform: translateY(0.2rem);
 }
+
+.language--container {
+  display: flex;
+  gap: 0.4rem;
+}
+.language {
+  text-decoration: none;
+  color: #66b984;
+  text-transform: capitalize;
+}
+
+.container-main {
+  padding: 20px 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container-subscribers {
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.card-email {
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  border: solid 2px #66b984;
+  width: fit-content;
+  padding: 5px;
+}

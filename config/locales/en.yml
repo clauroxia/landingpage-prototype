@@ -1,7 +1,7 @@
 en:
   models:
     preferences: preferences
-    subscribers: subscritores
+    subscribers: subscribers
   logo:
     subtitle: "Almost new fashion with guarantee"
   body:
@@ -14,14 +14,14 @@ en:
     suscribe: "Subscribe Me!"
   messagges:
     errors:
-      preferences_not_selected: "You shoud check at least one preference"
-      score_not_valid: "You should try enter an valid email"
+      preferences_not_selected: "You should check at least one preference"
+      score_not_valid: "You should try to enter an valid email"
       format_not_valid: "must have an email format"
     success:
       created: "We've sent you an email to confirm your subscription."
   preference:
-    men: man
-    women: woman
+    men: men
+    women: women
     children: children
   language:
     russian: "russian"
@@ -29,4 +29,4 @@ en:
     english: "english"
   link:
     index_subscribers: "Go to Subscribers"
-    new_subscriber: "Creat a new subscriber"
+    new_subscriber: "Create a new subscriber"

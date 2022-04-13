@@ -1,13 +1,11 @@
 <div id="<%= dom_id subscriber %>">
-  <div class="card-email">
-    <p>
-      <strong><%= t"form.email" %>:</strong>
-      <%= subscriber.email %>
-    </p>
-  <p><strong><%= t"form.preference" %> :</strong>
-      <% subscriber.preferences.each do |preference| %>
-        <%= t"preference.#{preference.name}" %> |
-      <% end %>
-    </p>
-  </div>
+
+  <tr>
+    <td><%= subscriber.email %></td>
+    <% my_preference = subscriber.preferences.map{|preference| preference.name}%>
+    <td><%= my_preference.include?("women") ? "✔" : "" %></td>
+    <td><%= my_preference.include?("children") ? "✔" : "" %></td>
+    <td><%= my_preference.include?("men") ? "✔" : "" %></td>
+  </tr>
+
 </div>
