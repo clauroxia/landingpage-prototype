@@ -1,12 +1,26 @@
 <section class="container-main">
   <p style="color: green"><%= notice %></p>
-  <h1>Subscribers</h1>
-
-  <div id="subscribers" class="container-subscribers">
-  <% @subscribers.each do |subscriber| %>
-    <%= render subscriber %>
-  <% end %>
-  </div>
+  <h1>Subscribers / Preferences</h1>
+  <table>
+    <thead>
+      <tr>
+        <th colspan="4">Subscribers / Preferences</th>
+      </tr> 
+      <tr>
+        <th>Email</th>
+        <th>Women</th>
+        <th>Men</th>
+        <th>Children</th>
+      </tr>
+    </thead>
+    <tbody>
+      <div id="subscribers">
+        <% @subscribers.each do |subscriber| %>
+          <%= render subscriber %>
+        <% end %>
+      </div>
+    </tbody>
+  </table>
 
   <%= link_to "New subscriber", new_subscriber_path %>
 </section>

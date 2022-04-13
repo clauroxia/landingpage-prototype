@@ -1,13 +1,16 @@
 <div id="<%= dom_id subscriber %>">
-<div class="card-email">
-  <p>
-    <strong>Email:</strong>
-    <%= subscriber.email %>
-  </p>
- <p><strong>Preferences :</strong>
-    <% subscriber.preferences.each do |preference| %>
-      <%= preference.name %> |
-    <% end %>
-  </p>
-</div>
+
+  <tr>
+    <td><%= subscriber.email %></td>
+    <% subscriber.preferences.find do |preference| %>
+      <td><%= preference[:name] == "women" ? "ok" : "" %></td>
+    <% end   %>
+   <% subscriber.preferences.find do |preference| %>
+      <td><%= preference[:name] == "men" ? "ok" : "" %></td>
+    <% end   %>
+    <% subscriber.preferences.find do |preference| %>
+      <td><%= preference[:name] == "children" ? "ok" : "" %></td>
+    <% end   %>
+  </tr>
+
 </div>

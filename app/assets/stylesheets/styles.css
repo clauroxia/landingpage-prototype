@@ -117,8 +117,12 @@
   color: #66b984;
   text-transform: capitalize;
 }
+
 .container-main {
-  padding: 10px;
+  padding: 20px 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .container-subscribers {
   padding: 10px;
