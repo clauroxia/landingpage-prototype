@@ -258,6 +258,7 @@ DEPENDENCIES
   rails (~> 7.0.1)
   rails-i18n
   rspec-rails (~> 5.0.0)
+  rubocop
   rubocop-rails
   sprockets-rails
   stimulus-rails
