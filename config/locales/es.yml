@@ -12,7 +12,7 @@ es:
     preference: "preferencias"
     suscribe: "Suscribirme ya!"
     checkbox: "Tendencias para "
-  messages:
+  messagges:
     errors:
       preferences_not_selected: "Escoge al menos una preferencia, por favor."
       score_not_valid: "El email que ingresaste no es válido, intenta otra vez!"
@@ -29,4 +29,4 @@ es:
     english: "inglés"
   link:
     index_subscribers: "Ver Suscriptores"
-    new_subscribers: "Crear un nuevo subscritor"
+    new_subscribers: "Crear un nuevo suscriptor"

@@ -1,3 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
-@import url("./styles.css");
-@import url("./reset.css");
+@import url("./components/styles.css");
+@import url("./global/global.css");
+@import url("./components/landing-page.css");
+@import url("./components/subscribers-page.css");
+@import url("./global/reset.css");
+@import url("./global/errors.css");

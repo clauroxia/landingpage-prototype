@@ -11,7 +11,11 @@
         <div class="subcontainer--checkboxes">
           <%= form.check_box(preference.name, {value: "0", checked: "false", class: "form--checkbox"}) %>
           <%# form.label(preference.name, t("form.checkbox#{index +1}"), class: "form--label") %>
-          <%= form.label(preference.name, params[:locale].eql?("en") ? t("preference.#{preference.name}") + t("form.checkbox") : t("form.checkbox") + t("preference.#{preference.name}"), class: "form--label") %>
+          <% t("preference.#{preference.name}") + t("form.checkbox") %>
+          <% normalFlow = t("form.checkbox") + t("preference.#{preference.name}") %>
+          <% invertFlow =  t("preference.#{preference.name}") + t("form.checkbox") %>
+          <% currentLanguage = I18n.locale.to_s.eql?("en") %>
+          <%= form.label(preference.name, currentLanguage ?  invertFlow : normalFlow, class: "form--label") %>
         </div>
       <% end %>
       <%=errors_for(subscriber, :preferences)%>
