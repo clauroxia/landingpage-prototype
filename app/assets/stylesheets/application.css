@@ -3,6 +3,7 @@
 @import url("./global/global.css");
 @import url("./components/landing-page.css");
 @import url("./components/subscribers-page.css");
+@import url("./components/table.css");
 @import url("./global/reset.css");
 @import url("./global/errors.css");
-@import url("./global/table.css");
+

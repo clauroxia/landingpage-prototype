@@ -12,9 +12,9 @@ en:
     preference: "preferences"
     checkbox: "'s fashion"
     suscribe: "Subscribe Me!"
-  messagges:
+  messages:
     errors:
-      preferences_not_selected: "You should check at least one preference"
+      preferences_not_selected: "You should choose at least one preference"
       score_not_valid: "You should try to enter an valid email"
       format_not_valid: "must have an email format"
     success:
