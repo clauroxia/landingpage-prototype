@@ -118,12 +118,6 @@ Exclude: - spec/\*_/_
 
 ## To add another language to i18n
 
-Create a yaml file with the same structure than the other on
-
-```bash
- ./config/locales
-```
-
 Go to
 
 ```bash
@@ -135,6 +129,14 @@ Add the corresponding local on line 39, for instance:
 ```bash
  config.i18n.available_locales = %I[es en ru]
 ```
+
+Create a yaml file with the same structure than the other on
+
+```bash
+ ./config/locales
+```
+-Remember that the file name must be the local, e.g. in the case of french, "fr.yml".
+-Optional you can add a logo for the language, on ./app/assets/images local must be the name, e.g. "fr.png".
 
 Available_locales https://github.com/svenfuchs/rails-i18n
 
