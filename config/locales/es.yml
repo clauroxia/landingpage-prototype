@@ -12,7 +12,7 @@ es:
       email: "correo electrónico"
       preference: "preferencias"
       suscribe: "¡Suscribirme ya!"
-      checkbox: "Tendencias para "
+      checkbox: "Tendencias para %{type}"
     preference:
       men: hombres
       women: mujeres

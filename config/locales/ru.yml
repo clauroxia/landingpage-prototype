@@ -12,7 +12,7 @@ ru:
       email: "почта"
       preference: "предпочтение"
       suscribe: "подписаться!"
-      checkbox: "тренд для"
+      checkbox: "тренд для %{type}"
     preference:
       men: мужчины
       women: женщины

@@ -11,7 +11,7 @@ en:
     form:
       email: "email"
       preference: "preferences"
-      checkbox: "'s fashion"
+      checkbox: "%{type}'s fashion"
       suscribe: "Subscribe Me!"
     preference:
       men: men

@@ -12,7 +12,7 @@ fr:
       email: "courrier électronique"
       preference: "préférences"
       suscribe: "Abonnez-vous maintenant !"
-      checkbox: "Tendances pour "
+      checkbox: "Tendances pour %{type}"
     preference:
       men: hommes
       women: femmes

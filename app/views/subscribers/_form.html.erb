@@ -10,11 +10,8 @@
       <% preferences.each_with_index do |preference, index| %>
         <div class="subcontainer--checkboxes">
           <%= form.check_box(preference.name, {value: "0", checked: "false", class: "form--checkbox"}) %>
-          <% t("activerecord.preference.#{preference.name}") + t("activerecord.form.checkbox") %>
-          <% normalFlow = t("activerecord.form.checkbox") + t("activerecord.preference.#{preference.name}") %>
-          <% invertFlow =  t("activerecord.preference.#{preference.name}") + t("activerecord.form.checkbox") %>
-          <% currentLanguage = I18n.locale.to_s.eql?("en") %>
-          <%= form.label(preference.name, currentLanguage ?  invertFlow : normalFlow, class: "form--label") %>
+          <% segregation_type = t("activerecord.preference.#{preference.name}") %>
+          <%= form.label(t("activerecord.form.checkbox", type: segregation_type), class: "form--label") %>
         </div>
       <% end %>
       <%=errors_for(subscriber, :preferences)%>
