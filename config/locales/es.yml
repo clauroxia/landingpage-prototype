@@ -16,7 +16,7 @@ es:
     errors:
       preferences_not_selected: "Escoge al menos una preferencia, por favor."
       score_not_valid: "El email que ingresaste no es válido, intenta otra vez!"
-      format_not_valid: "Formato de email inválido, intenta otra vez!"
+      format_not_valid: "El formato de email inválido, intenta otra vez!"
     success:
       created: "Te hemos enviado un correo electrónico para verificar tu subscripción."
   preference:

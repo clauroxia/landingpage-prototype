@@ -31,6 +31,6 @@ class Subscriber < ApplicationRecord
   # Validations
   validates :email, presence: true, uniqueness: true
   validate :valid_format, unless: proc { |a| a.email.blank? }
-  validate :one_preference?, unless: proc { |a| a.email.blank? }
-  validate :quality_score, unless: proc { |a| a.email.blank? }
+  validate :quality_score, if: proc { |a| a.errors.messages_for(:email).empty? }
+  validate :one_preference?, if: proc { |a| a.errors.messages_for(:email).empty? }
 end
