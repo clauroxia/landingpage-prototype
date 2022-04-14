@@ -135,8 +135,8 @@ Create a yaml file with the same structure than the other on
 ```bash
  ./config/locales
 ```
--Remember that the file name must be the local, e.g. in the case of french, "fr.yml".
--Optional you can add a logo for the language, on ./app/assets/images local must be the name, e.g. "fr.png".
+- Remember that the file name must be the local, e.g. in the case of french, "fr.yml".
+- Optional you can add a logo for the language, on ./app/assets/images local must be the name, e.g. "fr.png".
 
 Available_locales https://github.com/svenfuchs/rails-i18n
 
