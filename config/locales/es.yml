@@ -18,9 +18,9 @@ es:
       women: mujeres
       children: niños
     language:
-      russian: "ruso"
-      spanish: "español"
-      english: "inglés"
+      ru: "ruso"
+      es: "español"
+      en: "inglés"
     link:
       index_subscribers: "Ver Suscriptores"
       new_subscriber: "Crear un nuevo suscriptor"

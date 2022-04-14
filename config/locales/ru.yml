@@ -18,9 +18,9 @@ ru:
       women: женщины
       children: дети
     language:
-      russian: "Русский"
-      spanish: "испанский"
-      english: "Английский"
+      ru: "Русский"
+      es: "испанский"
+      en: "Английский"
     link:
       index_subscribers: "видеть подписчиков"
       new_subscriber: "Новый абонент"

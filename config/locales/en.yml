@@ -18,9 +18,9 @@ en:
       women: women
       children: children
     language:
-      russian: "russian"
-      spanish: "spanish"
-      english: "english"
+      ru: "russian"
+      es: "spanish"
+      en: "english"
     link:
       index_subscribers: "Go to Subscribers"
       new_subscriber: "Create a new subscriber"

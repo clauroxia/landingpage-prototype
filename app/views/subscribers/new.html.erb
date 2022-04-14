@@ -4,27 +4,18 @@
 <div class="section--container">
   <header class="header">
     <nav class="navbar">
-      <%= link_to  root_path(locale: :en), class:"language" do %>
+    <% I18n.available_locales.each do |language| %>
+      <%= link_to  root_path(locale: language), class:"language" do %>
         <div class="language--container">
-          <%= image_tag "en.png" %>
-          <p><%= t"activerecord.language.english" %></p>
+          <% exist_logo = File.exists?("./app/assets/images/#{language.to_s}.png") %>
+          <%= image_tag exist_logo ? "#{language.to_s}.png" : "default.png" %>
+          <p><%= t"activerecord.language.#{language.to_s}" %></p>
         </div>
       <% end%>
-      <%= link_to  root_path(locale: :ru), class:"language" do %>
-        <div class="language--container">
-          <%= image_tag "ru.png" %>
-          <p><%= t"activerecord.language.russian" %></p>
-        </div>
-      <% end%>
-      <%= link_to  root_path(locale: :es), class:"language" do %>
-        <div class="language--container">
-          <%= image_tag "es.png" %>
-          <p><%= t"activerecord.language.spanish" %></p>
-        </div>
-      <% end%>
-      
+    <% end %>
     </nav>
   </header>
+  
   <div class="container-logo">
     <%= image_tag("logo.svg", :alt => "logo", class: "logo") %>
     <p class="logo--subtitle"> <%= t"activerecord.logo.subtitle" %></p>
