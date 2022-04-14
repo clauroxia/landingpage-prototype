@@ -33,4 +33,4 @@ en:
         format_not_valid: "must have an email format"
     success:
       messages:
-        created: "We've sent you an email to confirm your subscription."
+        created: "We've sent you an email to confirm your subscription. Welcome!"

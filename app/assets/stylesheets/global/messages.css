@@ -6,3 +6,8 @@
   border-radius: 4px;
   padding: 5px;
 }
+
+.success-message {
+  color: green;
+  font-weight: bold;
+}

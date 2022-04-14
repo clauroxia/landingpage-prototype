@@ -33,4 +33,4 @@ es:
         format_not_valid: "El formato de email inválido, intenta otra vez!"
     success:
       messages:
-        created: "Te hemos enviado un correo electrónico para verificar tu subscripción."
+        created: "Te hemos enviado un correo electrónico para verificar tu subscripción. Bienvenido!"

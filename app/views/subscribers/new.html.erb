@@ -25,11 +25,12 @@
       
     </nav>
   </header>
-
   <div class="container-logo">
     <%= image_tag("logo.svg", :alt => "logo", class: "logo") %>
     <p class="logo--subtitle"> <%= t"activerecord.logo.subtitle" %></p>
   </div>
+
+  <p class="success-message"><%= notice %></p>
 
   <div class="body">
     <div class="call-action">

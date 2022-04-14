@@ -26,8 +26,8 @@ class SubscribersController < ApplicationController
 
     if @subscriber.save
       ConfirmationMailer.subscription(@subscriber).deliver_now
-      redirect_to subscribers_path, status: :created,
-                                    notice: I18n.t("activerecord.success.messages.created")
+      flash[:notice] = I18n.t("activerecord.success.messages.created")
+      redirect_to new_subscriber_path(@subscriber)
     else
       render :new, status: :unprocessable_entity
     end
