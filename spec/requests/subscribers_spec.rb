@@ -67,7 +67,6 @@ describe "Subscribers", type: :request do
 
       it "respond with the correct preference" do
         data = { email: "austin2@mail.com", women: "1", men: "0", children: "0" }
-        choosen_pref = ["women", "children"]
         post "/subscribers", params: { subscriber: data }
         last_sub = Subscriber.last
         expect(last_sub.preferences[0][:name]).to eq("women")

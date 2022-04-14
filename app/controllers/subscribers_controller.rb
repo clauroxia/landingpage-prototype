@@ -3,8 +3,6 @@
 require "httparty"
 
 class SubscribersController < ApplicationController
-  before_action :set_subscriber, only: %i[show]
-
   # GET /subscribers or /subscribers.json
   def index
     @subscribers = Subscriber.all
