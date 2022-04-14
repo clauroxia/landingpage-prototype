@@ -6,6 +6,7 @@ class SubscribersController < ApplicationController
   # GET /subscribers or /subscribers.json
   def index
     @subscribers = Subscriber.all
+    @preferences = Preference.all
   end
 
   # GET /subscribers/new

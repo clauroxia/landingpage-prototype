@@ -16,7 +16,7 @@
     <tbody>
       <div id="subscribers">
         <% @subscribers.each do |subscriber| %>
-          <%= render subscriber %>
+          <%= render subscriber, preferences: @preferences %>
         <% end %>
       </div>
     </tbody>

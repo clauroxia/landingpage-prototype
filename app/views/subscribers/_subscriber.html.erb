@@ -3,9 +3,9 @@
   <tr>
     <td><%= subscriber.email %></td>
     <% my_preference = subscriber.preferences.map{|preference| preference.name}%>
-    <td><%= my_preference.include?("women") ? "✔" : "" %></td>
-    <td><%= my_preference.include?("men") ? "✔" : "" %></td>
-    <td><%= my_preference.include?("children") ? "✔" : "" %></td>
+    <% @preferences.each do |preference| %>
+      <td><%= my_preference.include?(preference.name) ? image_tag("check.png") : image_tag("nocheck.png") %></td>
+    <% end%>
   </tr>
 
 </div>

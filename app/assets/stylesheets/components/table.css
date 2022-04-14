@@ -7,10 +7,13 @@ table {
 
 th {
   width: 25%;
-  border: 1px solid black;
+  border: 1px solid;
   border-collapse: collapse;
   text-align: center;
   vertical-align: top;
+  background-color: green;
+  color: white;
+  font-weight: bold;
 }
 
 td {
@@ -18,4 +21,8 @@ td {
   border: 1px solid black;
   border-collapse: collapse;
   text-align: center;
+}
+
+td > img {
+  display: inline-block;
 }
