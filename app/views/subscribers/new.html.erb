@@ -7,19 +7,19 @@
       <%= link_to  root_path(locale: :en), class:"language" do %>
         <div class="language--container">
           <%= image_tag "en.png" %>
-          <p><%= t"language.english" %></p>
+          <p><%= t"activerecord.language.english" %></p>
         </div>
       <% end%>
       <%= link_to  root_path(locale: :ru), class:"language" do %>
         <div class="language--container">
           <%= image_tag "ru.png" %>
-          <p><%= t"language.russian" %></p>
+          <p><%= t"activerecord.language.russian" %></p>
         </div>
       <% end%>
       <%= link_to  root_path(locale: :es), class:"language" do %>
         <div class="language--container">
           <%= image_tag "es.png" %>
-          <p><%= t"language.spanish" %></p>
+          <p><%= t"activerecord.language.spanish" %></p>
         </div>
       <% end%>
       
@@ -28,13 +28,13 @@
 
   <div class="container-logo">
     <%= image_tag("logo.svg", :alt => "logo", class: "logo") %>
-    <p class="logo--subtitle"> <%= t"logo.subtitle" %></p>
+    <p class="logo--subtitle"> <%= t"activerecord.logo.subtitle" %></p>
   </div>
 
   <div class="body">
     <div class="call-action">
-      <p ><%= t"body.welcome" %></p>
-      <p ><%= t"body.callAction" %></p>
+      <p ><%= t"activerecord.body.welcome" %></p>
+      <p ><%= t"activerecord.body.callAction" %></p>
     </div>
   </div>
   <div class="container-form">
@@ -42,7 +42,7 @@
   </div>
 
   <div>
-    <%= link_to t("link.index_subscribers"), subscribers_path %>
+    <%= link_to t("activerecord.link.index_subscribers"), subscribers_path %>
   </div>
 </div>
 

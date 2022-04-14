@@ -7,7 +7,7 @@ class Subscriber < ApplicationRecord
     return unless preferences.empty?
 
     errors.add(:preferences,
-               I18n.t("messages.errors.preferences_not_selected"))
+               I18n.t("activerecord.messages.errors.preferences_not_selected"))
   end
 
   def quality_score
@@ -16,14 +16,14 @@ class Subscriber < ApplicationRecord
     return unless response["quality_score"].to_f < 0.7
 
     errors.add(:email,
-               I18n.t("messages.errors.score_not_valid"))
+               I18n.t("activerecord.messages.errors.score_not_valid"))
   end
 
   def valid_format
     return if self[:email].match(/\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]{2,3}\z/)
 
     errors.add(:email,
-               I18n.t("messages.errors.format_not_valid"))
+               I18n.t("activerecord.messages.errors.format_not_valid"))
   end
   # Association
   has_and_belongs_to_many :preferences, dependent: :destroy

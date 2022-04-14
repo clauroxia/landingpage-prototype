@@ -1,16 +1,16 @@
 <section class="container-main">
   <p style="color: green"><%= notice %></p>
-  <h1><%= t("models.subscribers").capitalize  + "/" + t("models.preferences").capitalize %></h1>
+  <h1><%= t("activerecord.models.subscribers").capitalize  + "/" + t("activerecord.models.preferences").capitalize %></h1>
   <table>
     <thead>
       <tr>
-        <th colspan="4"><%= t("models.subscribers").capitalize  %></th>
+        <th colspan="4"><%= t("activerecord.models.subscribers").capitalize  %></th>
       </tr> 
       <tr>
-        <th><%= t("form.email").capitalize  %></th>
-        <th><%= t("preference.women").capitalize  %></th>
-        <th><%= t("preference.men").capitalize  %></th>
-        <th><%= t("preference.children").capitalize  %></th>
+        <th><%= t("activerecord.form.email").capitalize  %></th>
+        <th><%= t("activerecord.preference.women").capitalize  %></th>
+        <th><%= t("activerecord.preference.men").capitalize  %></th>
+        <th><%= t("activerecord.preference.children").capitalize  %></th>
       </tr>
     </thead>
     <tbody>
@@ -22,5 +22,5 @@
     </tbody>
   </table>
 
-  <%= link_to I18n.t("link.new_subscriber"), new_subscriber_path %>
+  <%= link_to I18n.t("activerecord.link.new_subscriber"), new_subscriber_path %>
 </section>

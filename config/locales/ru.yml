@@ -1,32 +1,38 @@
 ru:
-  models:
-    preferences: предпочтения
-    subscribers: абоненты
-  logo:
-    subtitle: "почти новая мода с гарантией"
-  body:
-    welcome: "Добро пожаловать на наш сайт! Скоро мы запустим наш сайт в этой стране."
-    callAction: "Подпишитесь, чтобы получать нашу рассылку."
-  form:
-    email: "почта"
-    preference: "предпочтение"
-    suscribe: "подписаться!"
-    checkbox: "тренд для"
-  messages:
+  activerecord:
     errors:
-      preferences_not_selected: "вы должны выбрать хотя бы одно предпочтение"
-      score_not_valid: "Введенный вами email недействителен, попробуйте еще раз!"
-      format_not_valid: "должен иметь формат электронной почты"
-    success:
-      created: "Мы отправили вам электронное письмо для подтверждения подписки."
-  preference:
-    men: мужчины
-    women: женщины
-    children: дети
-  language:
-    russian: "Русский"
-    spanish: "испанский"
-    english: "Английский"
-  link:
-    index_subscribers: "видеть подписчиков"
-    new_subscriber: "Новый абонент"
+      messages:
+        blank: "пожалуйста, введите адрес вашей электронной почты"
+        taken: "Введенный вами адрес электронной почты уже подписан"
+    models:
+      preferences: предпочтения
+      subscribers: абоненты
+    logo:
+      subtitle: "почти новая мода с гарантией"
+    body:
+      welcome: "Добро пожаловать на наш сайт! Скоро мы запустим наш сайт в этой стране."
+      callAction: "Подпишитесь, чтобы получать нашу рассылку."
+    form:
+      email: "почта"
+      preference: "предпочтение"
+      suscribe: "подписаться!"
+      checkbox: "тренд для"
+    messages:
+      errors:
+        blank: "пожалуйста, введите адрес вашей электронной почты"
+        preferences_not_selected: "вы должны выбрать хотя бы одно предпочтение"
+        score_not_valid: "Введенный вами email недействителен, попробуйте еще раз!"
+        format_not_valid: "должен иметь формат электронной почты"
+      success:
+        created: "Мы отправили вам электронное письмо для подтверждения подписки."
+    preference:
+      men: мужчины
+      women: женщины
+      children: дети
+    language:
+      russian: "Русский"
+      spanish: "испанский"
+      english: "Английский"
+    link:
+      index_subscribers: "видеть подписчиков"
+      new_subscriber: "Новый абонент"
