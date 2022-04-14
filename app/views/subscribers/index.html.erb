@@ -8,16 +8,14 @@
       </tr> 
       <tr>
         <th><%= t("activerecord.form.email").capitalize  %></th>
-        <th><%= t("activerecord.preference.women").capitalize  %></th>
-        <th><%= t("activerecord.preference.men").capitalize  %></th>
-        <th><%= t("activerecord.preference.children").capitalize  %></th>
+        <% @preferences.each do |preference| %>
+          <th><%= t("activerecord.preference.#{preference.name}").capitalize %></th>
+        <% end%>
       </tr>
     </thead>
     <tbody>
       <div id="subscribers">
-        <% @subscribers.each do |subscriber| %>
-          <%= render subscriber, preferences: @preferences %>
-        <% end %>
+        <%= render @subscribers, preferences: @preferences %>
       </div>
     </tbody>
   </table>

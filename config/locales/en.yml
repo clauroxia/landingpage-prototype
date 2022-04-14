@@ -1,9 +1,5 @@
 en:
   activerecord:
-    errors:
-      messages:
-        blank: "You need enter your email, please!"
-        taken: "The email you entered is already subscribed"
     models:
       preferences: preferences
       subscribers: subscribers
@@ -17,14 +13,6 @@ en:
       preference: "preferences"
       checkbox: "'s fashion"
       suscribe: "Subscribe Me!"
-    messages:
-      errors:
-        blank: "Please, we need that you enter your email!"
-        preferences_not_selected: "You should choose at least one preference"
-        score_not_valid: "You should try to enter an valid email"
-        format_not_valid: "must have an email format"
-      success:
-        created: "We've sent you an email to confirm your subscription."
     preference:
       men: men
       women: women
@@ -36,3 +24,13 @@ en:
     link:
       index_subscribers: "Go to Subscribers"
       new_subscriber: "Create a new subscriber"
+    errors:
+      messages:
+        blank: "You need enter your email, please!"
+        taken: "The email you entered is already subscribed"
+        preferences_not_selected: "You should choose at least one preference"
+        score_not_valid: "You should try to enter an valid email"
+        format_not_valid: "must have an email format"
+    success:
+      messages:
+        created: "We've sent you an email to confirm your subscription."

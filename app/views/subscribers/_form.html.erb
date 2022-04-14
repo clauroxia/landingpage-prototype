@@ -10,7 +10,6 @@
       <% preferences.each_with_index do |preference, index| %>
         <div class="subcontainer--checkboxes">
           <%= form.check_box(preference.name, {value: "0", checked: "false", class: "form--checkbox"}) %>
-          <%# form.label(preference.name, t("form.checkbox#{index +1}"), class: "form--label") %>
           <% t("activerecord.preference.#{preference.name}") + t("activerecord.form.checkbox") %>
           <% normalFlow = t("activerecord.form.checkbox") + t("activerecord.preference.#{preference.name}") %>
           <% invertFlow =  t("activerecord.preference.#{preference.name}") + t("activerecord.form.checkbox") %>

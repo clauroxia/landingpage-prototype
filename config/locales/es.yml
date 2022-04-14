@@ -1,9 +1,5 @@
 es:
   activerecord:
-    errors:
-      messages:
-        blank: "Ingresa tu correo electrónico, por favor!"
-        taken: "El email que ingresaste ya está suscrito, ingresa otro por favor!"
     models:
       preferences: preferencias
       subscribers: suscriptores
@@ -17,14 +13,6 @@ es:
       preference: "preferencias"
       suscribe: "¡Suscribirme ya!"
       checkbox: "Tendencias para "
-    messages:
-      errors:
-        blank: "Por favor, ingresa tu email!"
-        preferences_not_selected: "Escoge al menos una preferencia, por favor."
-        score_not_valid: "El email que ingresaste no es válido, intenta otra vez!"
-        format_not_valid: "El formato de email inválido, intenta otra vez!"
-      success:
-        created: "Te hemos enviado un correo electrónico para verificar tu subscripción."
     preference:
       men: hombres
       women: mujeres
@@ -36,3 +24,13 @@ es:
     link:
       index_subscribers: "Ver Suscriptores"
       new_subscriber: "Crear un nuevo suscriptor"
+    errors:
+      messages:
+        blank: "Ingresa tu correo electrónico, por favor!"
+        taken: "El email que ingresaste ya está suscrito, ingresa otro por favor!"
+        preferences_not_selected: "Escoge al menos una preferencia, por favor."
+        score_not_valid: "El email que ingresaste no es válido, intenta otra vez!"
+        format_not_valid: "El formato de email inválido, intenta otra vez!"
+    success:
+      messages:
+        created: "Te hemos enviado un correo electrónico para verificar tu subscripción."
