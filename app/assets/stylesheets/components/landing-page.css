@@ -3,6 +3,13 @@
   margin: 0 auto;
   text-align: center;
 }
+.header {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  width: 100%;
+  margin: 1rem 0;
+}
 .language--container {
   display: flex;
   gap: 0.4rem;
@@ -12,19 +19,13 @@
   color: #66b984;
   text-transform: capitalize;
 }
-.header {
-  display: flex;
-  flex-direction: column;
-  place-items: center;
-  height: 75px;
-  width: 100%;
-}
-.navbar {
+.nav-languages {
+  row-gap: 10px;
+  column-gap: 20px;
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
-  gap: 50px;
-  height: 100%;
 }
 .container-logo {
   margin-bottom: 3rem;

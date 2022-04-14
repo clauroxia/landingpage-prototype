@@ -3,13 +3,13 @@
 
 <div class="section--container">
   <header class="header">
-    <nav class="navbar">
+    <nav class="nav-languages">
     <% I18n.available_locales.each do |language| %>
       <%= link_to  root_path(locale: language), class:"language" do %>
         <div class="language--container">
           <% exist_logo = File.exists?("./app/assets/images/#{language.to_s}.png") %>
           <%= image_tag exist_logo ? "#{language.to_s}.png" : "default.png" %>
-          <p><%= t"activerecord.language.#{language.to_s}" %></p>
+          <p><%= t("activerecord.language.#{language.to_s}") %></p>
         </div>
       <% end%>
     <% end %>

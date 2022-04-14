@@ -1,0 +1,37 @@
+fr:
+  activerecord:
+    models:
+      preferences: préférences
+      subscribers: abonnés
+    logo:
+      subtitle: "Mode presque neuf avec garantie"
+    body:
+      welcome: "Bienvenue ! Nous allons bientôt lancer notre site dans ce pays."
+      callAction: "Inscrivez-vous pour recevoir nos meilleures offres."
+    form:
+      email: "courrier électronique"
+      preference: "préférences"
+      suscribe: "Abonnez-vous maintenant !"
+      checkbox: "Tendances pour "
+    preference:
+      men: hommes
+      women: femmes
+      children: enfants
+    language:
+      ru: "russe"
+      es: "espagnol"
+      en: "anglais"
+      fr: "français"
+    link:
+      index_subscribers: "Voir les abonnés"
+      new_subscriber: "Créer un nouvel abonné"
+    errors:
+      messages:
+        blank: "Veuillez saisir votre adresse e-mail !"
+        taken: "L'email que vous avez saisi est déjà inscrit, veuillez en saisir un autre !"
+        preferences_not_selected: "Veuillez choisir au moins une préférence."
+        score_not_valid: "L'email que vous avez entré n'est pas valide, essayez à nouveau !"
+        format_not_valid: "Format d'email non valide, réessayez !"
+    success:
+      messages:
+        created: "Nous vous avons envoyé un e-mail pour vérifier votre abonnement. Bienvenue !"

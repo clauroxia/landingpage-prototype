@@ -21,6 +21,7 @@ es:
       ru: "ruso"
       es: "español"
       en: "inglés"
+      fr: "frances"
     link:
       index_subscribers: "Ver Suscriptores"
       new_subscriber: "Crear un nuevo suscriptor"

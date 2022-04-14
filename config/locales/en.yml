@@ -21,6 +21,7 @@ en:
       ru: "russian"
       es: "spanish"
       en: "english"
+      fr: "french"
     link:
       index_subscribers: "Go to Subscribers"
       new_subscriber: "Create a new subscriber"
