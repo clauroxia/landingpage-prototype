@@ -18,16 +18,19 @@ class Subscriber < ApplicationRecord
                  I18n.t("messages.errors.score_not_valid"))
     end
   end
+
+  def valid_format
+    if !(self[:email].match(/\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]{2,3}\z/))
+      errors.add(:email,
+        I18n.t("messages.errors.format_not_valid"))
+    end
+  end
   # Association
   has_and_belongs_to_many :preferences, dependent: :destroy
 
   # Validations
   validates :email, presence: true, uniqueness: true
-  validates :email,
-            format: { with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]{2,3}\z/,
-                      message: I18n.t("messages.errors.format_not_valid") }, unless: proc { |a|
-                                                                                       a.email.blank?
-                                                                                     }
+  validate :valid_format, unless: proc { |a| a.email.blank? }
   validate :has_one_preference, unless: proc { |a| a.email.blank? }
   validate :quality_score, unless: proc { |a| a.email.blank? }
 end
