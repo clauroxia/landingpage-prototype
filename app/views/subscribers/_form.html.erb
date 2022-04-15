@@ -6,12 +6,14 @@
   </div>
 
   <div class="container--checkboxes">
-    <%= form.label (t"activerecord.form.preference").to_sym, style: "display: block", class: "form--group-preference" %>
+    <%= form.label (t"activerecord.form.preference").to_sym, class: "form--group-preference" %>
       <% preferences.each_with_index do |preference, index| %>
+        <% segregation_type = t("activerecord.preference.#{preference.name}") %>
         <div class="subcontainer--checkboxes">
-          <%= form.check_box(preference.name, {value: "0", checked: "false", class: "form--checkbox"}) %>
-          <% segregation_type = t("activerecord.preference.#{preference.name}") %>
-          <%= form.label(t("activerecord.form.checkbox", type: segregation_type), class: "form--label") %>
+          <%= form.label preference.name, class: "form--label" do %>
+            <%= form.check_box(preference.name, {class: "form--checkbox"}) %>
+            <%= t("activerecord.form.checkbox", type: segregation_type) %>
+          <% end %>
         </div>
       <% end %>
       <%=errors_for(subscriber, :preferences)%>

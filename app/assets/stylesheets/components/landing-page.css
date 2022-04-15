@@ -84,6 +84,10 @@
 .subcontainer--chexboxes {
   flex-direction: row;
 }
+.form--label,
+.form--checkbox {
+  cursor: pointer;
+}
 .form--checkbox:checked {
   accent-color: green;
   filter: opacity(0.7);

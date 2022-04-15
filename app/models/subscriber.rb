@@ -3,11 +3,20 @@
 require "httparty"
 
 class Subscriber < ApplicationRecord
+  # Association
+  has_and_belongs_to_many :preferences, dependent: :destroy
+
+  # Validations
+  validates :email, presence: true, uniqueness: true,
+                    format: { with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]{2,3}\z/ }
+  validate :quality_score, if: proc { |a| a.errors.messages_for(:email).empty? }
+  validate :one_preference?, if: proc { |a| a.errors.messages_for(:email).empty? }
+
+  # Custom Validations
   def one_preference?
     return unless preferences.empty?
 
-    errors.add(:preferences,
-               I18n.t("activerecord.errors.messages.preferences_not_selected"))
+    errors.add(:preferences, I18n.t("activerecord.errors.messages.preferences_not_selected"))
   end
 
   def quality_score
@@ -15,22 +24,6 @@ class Subscriber < ApplicationRecord
     response = HTTParty.get("#{base_uri}?api_key=#{ENV['ABSTRACT_API_KEY']}&email=#{self[:email]}", no_follow: true)
     return unless response["quality_score"].to_f < 0.7
 
-    errors.add(:email,
-               I18n.t("activerecord.errors.messages.score_not_valid"))
+    errors.add(:email, I18n.t("activerecord.errors.messages.score_not_valid"))
   end
-
-  def valid_format
-    return if self[:email].match(/\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]{2,3}\z/)
-
-    errors.add(:email,
-               I18n.t("activerecord.errors.messages.format_not_valid"))
-  end
-  # Association
-  has_and_belongs_to_many :preferences, dependent: :destroy
-
-  # Validations
-  validates :email, presence: true, uniqueness: true
-  validate :valid_format, unless: proc { |a| a.email.blank? }
-  validate :quality_score, if: proc { |a| a.errors.messages_for(:email).empty? }
-  validate :one_preference?, if: proc { |a| a.errors.messages_for(:email).empty? }
 end

@@ -29,8 +29,8 @@ fr:
       messages:
         blank: "Veuillez saisir votre adresse e-mail !"
         taken: "L'email que vous avez saisi est déjà inscrit, veuillez en saisir un autre !"
+        invalid: "L'email que vous avez entré n'est pas valide, essayez à nouveau !"
         preferences_not_selected: "Veuillez choisir au moins une préférence."
-        score_not_valid: "L'email que vous avez entré n'est pas valide, essayez à nouveau !"
         format_not_valid: "Format d'email non valide, réessayez !"
     success:
       messages:

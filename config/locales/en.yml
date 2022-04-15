@@ -29,8 +29,8 @@ en:
       messages:
         blank: "You need enter your email, please!"
         taken: "The email you entered is already subscribed"
+        invalid: "You should try to enter an valid email"
         preferences_not_selected: "You should choose at least one preference"
-        score_not_valid: "You should try to enter an valid email"
         format_not_valid: "must have an email format"
     success:
       messages:
