@@ -29,9 +29,15 @@ en:
       messages:
         blank: "You need enter your email, please!"
         taken: "The email you entered is already subscribed"
-        invalid: "You should try to enter an valid email"
+        invalid: "must have an correct email format, try again!"
         preferences_not_selected: "You should choose at least one preference"
-        format_not_valid: "must have an email format"
+        score_not_valid: "Le score api de l'email est inférieur à celui requis, entrez un autre email !"
     success:
       messages:
         created: "We've sent you an email to confirm your subscription. Welcome!"
+    mailer:
+      greetings: "Hello %{subscriber},thanks for subscribing to our newsletter ✨"
+      message: "Soon, we'll send you exclusive offers of our products, according to your preferences."
+      warning: ">> Please, don't answer this email."
+      welcome: "Welcome to MICOLET!"
+      subject: "Confirmation"

@@ -56,7 +56,7 @@ describe "Subscribers", type: :request do
         post "/subscribers",
              params: { subscriber: { email: "austin@mail.com", women: "0", men: "1",
                                      children: "0" } }
-        expect(response).to have_http_status(:created)
+        expect(response).to have_http_status(:see_other)
       end
 
       it "respond with the corrrect email" do

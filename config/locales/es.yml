@@ -29,9 +29,15 @@ es:
       messages:
         blank: "Ingresa tu correo electrónico, por favor!"
         taken: "El email que ingresaste ya está suscrito, ingresa otro por favor!"
-        invalid: "El email que ingresaste no es válido, intenta otra vez!"
+        invalid: "El formato del email no es válido, intenta otra vez!"
         preferences_not_selected: "Escoge al menos una preferencia, por favor."
-        format_not_valid: "El formato de email inválido, intenta otra vez!"
+        score_not_valid: "El api score del email es menor del requerido, ingresa otro correo!"
     success:
       messages:
         created: "Te hemos enviado un correo electrónico para verificar tu subscripción. Bienvenido!"
+    mailer:
+      greetings: "Hola %{subscriber}, agradecemos que te suscribieras a nuestro boletín informativo ✨"
+      message: "Pronto, le enviaremos ofertas especiales de nuestros productos, de acuerdo con tus preferencias."
+      warning: ">> Por favor, no responder este correo."
+      welcome: "Bienvenido a MICOLET!"
+      subject: "Confirmación"

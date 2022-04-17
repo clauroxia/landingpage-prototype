@@ -29,9 +29,15 @@ fr:
       messages:
         blank: "Veuillez saisir votre adresse e-mail !"
         taken: "L'email que vous avez saisi est déjà inscrit, veuillez en saisir un autre !"
-        invalid: "L'email que vous avez entré n'est pas valide, essayez à nouveau !"
+        invalid: "Le format de l'e-mail n'est pas valide, réessayez!"
         preferences_not_selected: "Veuillez choisir au moins une préférence."
-        format_not_valid: "Format d'email non valide, réessayez !"
+        score_not_valid: "Format d'email non valide, réessayez !"
     success:
       messages:
         created: "Nous vous avons envoyé un e-mail pour vérifier votre abonnement. Bienvenue !"
+    mailer:
+      greetings: "Bonjour %{subscriber}, merci de vous être abonné à notre newsletter"
+      message: "Bientôt, nous vous ferons parvenir des offres exclusives de nos produits, selon vos préférences."
+      warning: ">> S'il vous plaît, ne répondez pas à cet e-mail."
+      welcome: "Bienvenue chez MICOLET !"
+      subject: "Confirmation"

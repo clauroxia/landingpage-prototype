@@ -1,6 +1,6 @@
 <p>
-  Hello <%= @subscriber.email %>, thanks for subscribing to our newsletter ✨<br>
-  Soon, we'll send you exclusive offers of our products, according to your preferences.
+  <%= t("activerecord.mailer.greetings", subscriber: @subscriber.email) %><br>
+  <%= t("activerecord.mailer.message") %>
   <br>
   <br>
   <strong>Micolet Team</strong>
@@ -10,4 +10,4 @@
 <br>
 <br>
 <br>
-<p><small>>> Please, don't answer this email.</small></p>
+<p><small>  <%= t("activerecord.mailer.warning") %></small></p>

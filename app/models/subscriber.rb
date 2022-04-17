@@ -8,7 +8,8 @@ class Subscriber < ApplicationRecord
 
   # Validations
   validates :email, presence: true, uniqueness: true,
-                    format: { with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]{2,3}\z/ }, if: proc { |a| a.errors.messages_for(:email).empty? }
+                    format: { with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]{2,3}\z/ },
+                    if: proc { |a| a.errors.messages_for(:email).empty? }
   validate :quality_score, if: proc { |a| a.errors.messages_for(:email).empty? }
   validate :one_preference?, if: proc { |a| a.errors.messages_for(:email).empty? }
 

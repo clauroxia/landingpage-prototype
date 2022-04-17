@@ -21,7 +21,9 @@
     <p class="logo--subtitle"> <%= t"activerecord.logo.subtitle" %></p>
   </div>
 
-  <p class="success-message"><%= notice %></p>
+  <div data-turbo="false">
+    <p class="success-message"><%= notice %></p>
+  </div>
 
   <div class="body">
     <div class="call-action">
@@ -29,7 +31,7 @@
       <p ><%= t"activerecord.body.callAction" %></p>
     </div>
   </div>
-  <div class="container-form">
+  <div class="container-form" data-turbo="false">
     <%= render "form", subscriber: @subscriber, preferences:@preferences %>
   </div>
 
